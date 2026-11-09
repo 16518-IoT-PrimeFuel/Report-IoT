@@ -715,34 +715,111 @@ No hay tablero del Sprint 2. Las tareas se agrupan por producto según el trabaj
 
 #### 6.2.2.4. Development Evidence for Sprint Review
 
-Commits representativos del período, todos en la rama `main`. Las fechas de los commits de la aplicación web y de los web services se indican por rango; el historial completo está en GitHub.
+Las fechas son las de autor de cada commit en el historial de GitHub, en hora de Lima (UTC−5). Todos los commits están en la rama `main`, salvo los de la Fog API, que se desarrollaron en `feat/edge-broker` y llegaron a `main` con el merge del PR #4. En el período, `backend` registra 26 commits, `frontend` 24 y `landing-page` 1; los de `backend` y `frontend` son de Samuel Bonifacio y el de `landing-page`, de Alberto Ponce.
+
+**Web Services (`backend`).**
 
 | Repository | Branch | Commit Id | Commit Message | Committed on |
 |---|---|---|---|---|
-| backend | main | 0a364eb | Invalidar tokens al cambiar credenciales | 11/10/2026 – 12/10/2026 |
-| backend | main | bbb76dd | Política de contraseña y límite de intentos | 11/10/2026 – 12/10/2026 |
-| backend | main | 00c27a7 | Ciclo de recepción y reposición | 11/10/2026 – 12/10/2026 |
-| backend | main | e6fcbe5 | Lecturas de tanque | 11/10/2026 – 12/10/2026 |
-| backend | main | 2845c49 | Sedes, RUC y credenciales de dispositivo | 11/10/2026 – 12/10/2026 |
-| backend | main | 11658ec | Health check: `GET /api/health-check` | 08/11/2026 |
-| backend | main | 9142563 | Merge del PR #4 (fog / ESP32) | 08/11/2026 |
-| frontend | main | 910d004 | Mapas de sedes | 12/10/2026 |
-| frontend | main | 27b9a49 | Dashboards por rol | 12/10/2026 |
-| frontend | main | 9a31cec | Inventario | 12/10/2026 |
-| landing-page | main | 79263fe | Contenido, navbar, formulario de contacto y SEO | 08/11/2026 |
+| backend | main | 0a364eb | fix(iam): invalidate tokens after credential changes | 11/10/2026 |
+| backend | main | 89dc91b | feat(ordering): preserve request identity on fuel orders | 11/10/2026 |
+| backend | main | 2d8ce33 | fix(payment): enforce payment lifecycle and order uniqueness | 11/10/2026 |
+| backend | main | ff918cd | fix(fulfillment): make delivery assignment retry safe | 11/10/2026 |
+| backend | main | e6fcbe5 | feat(telemetry): expose tank readings | 11/10/2026 |
+| backend | main | bbb76dd | feat(iam): limit auth attempts and enforce password policy | 11/10/2026 |
+| backend | main | 2845c49 | feat(equipment): add site locations and RUC validation | 12/10/2026 |
+| backend | main | f77b927 | feat(equipment): manage provider device credentials | 12/10/2026 |
+| backend | main | 9ff7628 | feat(iam): add session options and audited admin controls | 12/10/2026 |
+| backend | main | 00c27a7 | feat(ordering): complete receipt and replenishment lifecycle | 12/10/2026 |
+| backend | main | c26a708 | feat(analytics): add spending trend to BuyerAnalytics and related resources | 12/10/2026 |
+| backend | main | e4b98b9 | feat(membership): add organization membership query and related resources | 12/10/2026 |
+| backend | main | 9dfc819 | feat(database): add new columns and constraints for user tokens, deliveries, payments, and customer sites | 12/10/2026 |
+| backend | main | 11658ec | feat(health): add health check endpoint and related tests | 07/11/2026 |
 
-En el período, el repositorio `backend` registra 26 commits, todos de Samuel Bonifacio; `frontend`, los commits listados en 6.2.2.3, también de Samuel Bonifacio; y `landing-page`, un commit de Alberto Ponce.
+**Broker MQTT y Fog API (`backend/fog`).**
+
+| Repository | Branch | Commit Id | Commit Message | Committed on |
+|---|---|---|---|---|
+| backend | feat/edge-broker | 7d07b64 | feat(edge): add Edge API, Mosquitto fallback and ESP32 level sensor firmware | 22/10/2026 |
+| backend | feat/edge-broker | 6636a58 | feat(edge): enhance sensor configuration and add comprehensive setup guide | 22/10/2026 |
+| backend | feat/edge-broker | a461ccb | feat(fog): refactor edge broker bridge connect (edge -> fog) & update HiveMQ for broker instance | 22/10/2026 |
+| backend | main | 9142563 | Merge pull request #4 from 16518-IoT-PrimeFuel/feat/edge-broker | 07/11/2026 |
+
+**Aplicación web (`frontend`).**
+
+| Repository | Branch | Commit Id | Commit Message | Committed on |
+|---|---|---|---|---|
+| frontend | main | 5b14c71 | feat(confirm-dialog): implement confirmation dialog with reason input and validation | 05/10/2026 |
+| frontend | main | d736636 | feat(ordering): enhance ordering functionality with request creation, cancellation, and confirmation dialogs | 05/10/2026 |
+| frontend | main | 4f3e321 | chore(release): release frontend with sprint 1 features | 06/10/2026 |
+| frontend | main | 47fff7a | feat(equipment): add tank refill policy and detail view | 11/10/2026 |
+| frontend | main | c38ebfa | feat(ordering): preselect tank for refill request | 11/10/2026 |
+| frontend | main | 910d004 | feat(equipment): add map based tank site locations | 12/10/2026 |
+| frontend | main | 27b9a49 | feat(dashboard): consolidate analytics into role dashboards | 12/10/2026 |
+| frontend | main | 2cf42ef | feat(fulfillment): improve fleet and delivery views | 12/10/2026 |
+| frontend | main | 9a31cec | feat(inventory): improve product management views | 12/10/2026 |
+| frontend | main | 7dca09f | feat(auth): improve session persistence and expiry | 12/10/2026 |
+| frontend | main | 2a5a412 | style(admin): refresh admin tables | 12/10/2026 |
+
+**Landing page (`landing-page`).**
+
+| Repository | Branch | Commit Id | Commit Message | Committed on |
+|---|---|---|---|---|
+| landing-page | main | 79263fe | feat(landing): adapt content, navbar, contact form and SEO for fuel distributors | 08/11/2026 |
+
+##### Código del broker MQTT y de la Fog API
+
+La telemetría del tanque sigue este recorrido. El sensor de nivel (ESP32) publica la lectura por MQTT en un broker público, o la envía por HTTP a la Fog API; la Fog API la valida y la reenvía al backend. El `X-Device-Token`, que identifica al tanque en el backend, vive solo en la Fog API y nunca viaja por el broker.
+
+```
+ESP32 ──MQTT──▶ broker.hivemq.com ──▶ Fog API ──HTTPS + X-Device-Token──▶ backend (POST /api/telemetry/readings)
+ESP32 ──HTTP (misma red)──────────────────────▶ Fog API
+```
+
+La Fog API es una aplicación Spring Boot independiente (`fog/`, con su propio `pom.xml`, `Dockerfile` y `docker-compose.yml`), separada de los bounded contexts del backend. Se organiza en capas, como el resto del backend:
+
+| Capa | Clase | Responsabilidad |
+|---|---|---|
+| Domain | `Reading` | Lectura con `schemaVersion`, `deviceId`, `channel`, `sequence`, `capturedAt`, `level` y `unit`; su clave es la terna dispositivo, canal y secuencia. |
+| Domain | `ReadingPolicy` | Rechaza `schemaVersion` distinta de 1, `deviceId` fuera de la lista permitida, `sequence` negativa, `level` fuera de rango o `capturedAt` en el futuro (más de 5 minutos). |
+| Application | `ReadingRelayService` | Recibe lecturas de HTTP o MQTT, ignora una `sequence` ya vista, las encola y las reenvía en orden de llegada. |
+| Application | `TelemetryForwarder`, `ReadingSource`, `RelayRecord`, `ReadingRejectedException` | Contrato del reenvío, origen de la lectura (HTTP o MQTT), registro de resultado y error de rechazo. |
+| Infrastructure | `MqttReadingSubscriber` | Cliente Eclipse Paho que se suscribe al topic de lecturas y entrega cada mensaje al relay. |
+| Infrastructure | `BackendTelemetryClient` | Reenvía la lectura al backend con `X-Device-Token`. |
+| Interface | `ReadingsController`, `HealthController` | `POST /api/v1/readings`, `GET /api/v1/readings/recent` y `GET /health`, en el puerto 8090. |
+
+**Suscripción al broker.** `MqttReadingSubscriber` implementa `SmartLifecycle` y `MqttCallbackExtended`. Al arrancar crea un `MqttClient` con un identificador aleatorio (`fulltank-fog-` más 8 caracteres) y sesión limpia. Reintenta la primera conexión cada 15 segundos con `@Scheduled`; después `setAutomaticReconnect(true)` reconecta solo. Como la sesión es limpia, vuelve a suscribirse en cada `connectComplete`, con QoS 1. Los parámetros de conexión son un tiempo de espera de 10 segundos y un *keep alive* de 30. `messageArrived` convierte el cuerpo JSON en un `Reading`, lo valida con Jakarta Validation y lo entrega al relay; nunca lanza excepciones, porque Paho cerraría la conexión. Si el broker no está disponible, la Fog sigue recibiendo lecturas por HTTP.
+
+**Cola y reintentos.** El relay mantiene una cola en memoria de 500 lecturas. Cada segundo, `drain()` reenvía la primera. Si el backend no responde (por ejemplo, Render dormido), la misma lectura vuelve a la cabeza con la misma `sequence`, para que el backend la deduplique si el primer intento sí llegó, y con espera creciente de 2 a 60 segundos; las siguientes esperan detrás, para no adelantar un `capturedAt` posterior. Un 4xx del backend descarta la lectura, y un 202 con `quality: QUARANTINED` se registra como aviso. Si la cola se llena, se descarta la lectura más antigua, porque el nivel más reciente vale más.
+
+**Configuración.** Todo se define por variables de entorno en `application.yml`:
+
+| Variable | Valor por defecto |
+|---|---|
+| `MQTT_URL` | `tcp://broker.hivemq.com:1883` |
+| `MQTT_TOPIC` | `fulltank/change-me/tanks/+/readings` |
+| `MQTT_ENABLED` | `true` |
+| `BACKEND_URL` | `https://fulltank-backend.onrender.com/api` |
+| `DEVICE_TOKEN` | vacío, se completa con el token emitido por `POST /api/provider/tanks/{tankId}/device-credential` |
+| `ALLOWED_DEVICE_IDS` | vacío, acepta cualquier dispositivo |
+| `PORT` | `8090` |
+
+**Elección del broker y limitaciones de seguridad.** El broker público de HiveMQ es complementario: la integración obligatoria del dispositivo es con la Fog API del equipo, que mantiene un camino HTTP directo como plan B. La primera versión del 22/10/2026 (`7d07b64`) incluía un broker Mosquitto en Docker como plan B y se llamaba *Edge API*; el commit `a461ccb` la renombró a *Fog API* y reemplazó ese plan B por el camino HTTP. En el mismo commit se eliminó el firmware del ESP32 (`firmware/fulltank_sensor`) del repositorio `backend`, por lo que el código del sensor no forma parte de la evidencia de este sprint. En un broker público, cualquiera puede suscribirse al topic y ver los niveles, o publicar en él lecturas falsas. La mitigación es un topic con sufijo aleatorio, la lista `ALLOWED_DEVICE_IDS`, la validación de rango y no enviar credenciales en los mensajes. Para producción se requiere un broker privado con TLS, un usuario por dispositivo y listas de control de acceso por topic.
 
 #### 6.2.2.5. Testing Suite Evidence for Sprint Review
 
-Las suites de este sprint existen en el árbol integrado. No hay captura de una corrida de `./mvnw test` de este sprint, por lo que no se cita ninguna cifra de ejecución nueva; las 282 pruebas del informe del Sprint 1 corresponden al 02/10/2026.
+Las suites de este sprint existen en el árbol integrado en `main`. No hay captura de una corrida de `./mvnw test` de este sprint, por lo que no se cita ninguna cifra de ejecución nueva; las 282 pruebas del informe del Sprint 1 corresponden al 02/10/2026.
 
 | Repository | Suite | Cobertura |
 |---|---|---|
 | backend | `HealthCheckControllerTest` | El endpoint `GET /api/health-check` |
 | backend | `OpenApiSnapshotTest`, `ApiLedgerSelfCheckTest` | Instantáneas del contrato OpenAPI, actualizadas en el sprint |
-| backend (`fog/`) | `ReadingRelayServiceTest`, `ReadingPolicyTest`, `FogApplicationTests` | Reenvío y política de lecturas del fog |
+| backend (`fog/`) | `ReadingRelayServiceTest` | 8 pruebas del relay: reenvío en orden de llegada, reintento de la misma lectura con espera creciente, descarte de una lectura rechazada por el backend, conteo de lecturas en cuarentena, `sequence` repetida, cola llena, lectura que viola la política y crecimiento acotado de la espera |
+| backend (`fog/`) | `ReadingPolicyTest` | 5 pruebas de la política: lectura válida, dispositivo desconocido, nivel fuera de rango, `schemaVersion` no admitida con fecha futura, y lista vacía que acepta cualquier dispositivo |
+| backend (`fog/`) | `FogApplicationTests` | Carga del contexto de Spring de la Fog API |
 | landing-page | `ux-landing-check.test.mjs` | Verificación de la landing, se ejecuta con `node ux-landing-check.test.mjs` |
+
+Los commits relacionados con estas pruebas son `7d07b64` (primera versión de las pruebas del relay y de la política, en `edge/`), `a461ccb` (traslado a `fog/`) y `11658ec` (prueba del *health check* y refresco de las instantáneas OpenAPI).
 
 #### 6.2.2.6. Execution Evidence for Sprint Review
 
@@ -1090,7 +1167,7 @@ En este sprint no cambió la infraestructura descrita en 6.1.4. Se verificó por
 
 #### 6.2.2.9. Team Collaboration Insights during Sprint
 
-Entre el 05/10/2026 y el 08/11/2026, según el historial de GitHub, los commits de producto son: Samuel Bonifacio, 26 en `backend` y los del `frontend` listados en 6.2.2.3; Alberto Ponce, 1 en `landing-page`. Los demás integrantes no tienen commits de producto en esta ventana. Los commits de `Report` del 06/10 al 09/10 corresponden al cierre del TB1 y no se atribuyen al Sprint 2 de software. Las capturas de los analíticos de GitHub de este período están pendientes.
+Entre el 05/10/2026 y el 08/11/2026, según el historial de GitHub, los commits de producto son: Samuel Bonifacio, 26 en `backend` y 24 en `frontend`; Alberto Ponce, 1 en `landing-page`. Los demás integrantes no tienen commits de producto en esta ventana. Los commits de `Report` del 06/10 al 09/10 corresponden al cierre del TB1 y no se atribuyen al Sprint 2 de software. Las capturas de los analíticos de GitHub de este período están pendientes.
 
 #### 6.3. Validation Interviews
 
