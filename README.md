@@ -105,13 +105,15 @@
 
 ## Project Report Collaboration Insights
 
-**Link del repositorio del informe:** [Report](https://github.com/16518-IoT-PrimeFuel/Report)
+**Link del repositorio del informe:** [Report-IoT](https://github.com/16518-IoT-PrimeFuel/Report-IoT)
 
 **Link del repositorio de la Landing Page:** [Landing Page](https://github.com/16518-IoT-PrimeFuel/landing-page)
 
 **Link del repositorio del frontend:** [Frontend](https://github.com/16518-IoT-PrimeFuel/frontend)
 
 **Link del repositorio del backend:** [Backend](https://github.com/16518-IoT-PrimeFuel/backend)
+
+**Link del repositorio de la aplicación móvil:** [Mobile-app](https://github.com/16518-IoT-PrimeFuel/Mobile-app)
 
 **Link de los repositorios de la organización:** [16518-IoT-PrimeFuel](https://github.com/16518-IoT-PrimeFuel)
 

@@ -715,7 +715,7 @@ No hay tablero del Sprint 2. Las tareas se agrupan por producto según el trabaj
 
 #### 6.2.2.4. Development Evidence for Sprint Review
 
-Las fechas son las de autor de cada commit en el historial de GitHub, en hora de Lima (UTC−5). Todos los commits están en la rama `main`, salvo los de la Fog API, que se desarrollaron en `feat/edge-broker` y llegaron a `main` con el merge del PR #4. En el período, `backend` registra 26 commits, `frontend` 24 y `landing-page` 1; los de `backend` y `frontend` son de Samuel Bonifacio y el de `landing-page`, de Alberto Ponce.
+Las fechas son las de autor de cada commit en el historial de GitHub, en hora de Lima (UTC−5). Los commits de las tablas están en la rama `main`, salvo los de la Fog API, que se desarrollaron en `feat/edge-broker` y llegaron a `main` con el merge del PR #4. En el período, contando todas las ramas, `backend` registra 26 commits, `frontend` 26, `landing-page` 1 y `Mobile-app` 6. Los de `backend` y 25 de `frontend` son de Samuel Bonifacio; el commit restante de `frontend`, de Schneider Delgado; el de `landing-page`, de Alberto Ponce, y los de `Mobile-app`, de Joseph Rodriguez. Las tablas siguientes listan commits representativos de `main` y de la Fog API.
 
 **Web Services (`backend`).**
 
@@ -1103,7 +1103,7 @@ En este sprint no cambió la infraestructura descrita en 6.1.4. Se verificó por
 | Web Services | https://fulltank-backend.onrender.com | `GET /api/health-check` responde `200` con `{"status":"UP","database":"UP"}` |
 | Swagger UI | https://fulltank-backend.onrender.com/swagger-ui/index.html | `200` |
 | Fog / ESP32 | — | Solo ejecución local; sin despliegue |
-| Mobile App | — | Sin commits en el período; sin despliegue |
+| Mobile App | — | Sin commits en `main` desde el 08/09/2026; hay 6 commits en la rama `feat/mobile-backend-integration` (22/10/2026), sin integrar y sin despliegue |
 
 <div align="center">
   <img src="../assets/chapter-6/sprint-2/landing-desktop-01.jpg" alt="Inicio con la propuesta de valor, las llamadas a la acción y el panel de ejemplo." width="800"/>
@@ -1167,7 +1167,67 @@ En este sprint no cambió la infraestructura descrita en 6.1.4. Se verificó por
 
 #### 6.2.2.9. Team Collaboration Insights during Sprint
 
-Entre el 05/10/2026 y el 08/11/2026, según el historial de GitHub, los commits de producto son: Samuel Bonifacio, 26 en `backend` y 24 en `frontend`; Alberto Ponce, 1 en `landing-page`. Los demás integrantes no tienen commits de producto en esta ventana. Los commits de `Report` del 06/10 al 09/10 corresponden al cierre del TB1 y no se atribuyen al Sprint 2 de software. Las capturas de los analíticos de GitHub de este período están pendientes.
+La tabla resume los commits de cada integrante entre el 05/10/2026 y el 09/11/2026, según el historial de GitHub de la organización [16518-IoT-PrimeFuel](https://github.com/16518-IoT-PrimeFuel). Se cuentan **todas las ramas** de cada repositorio, sin repetir un mismo commit en dos ramas y contando los commits de fusión. La asignación de usuarios de GitHub a integrantes sigue la tabla de 6.2.2.2 y 6.2.1.2.
+
+| Team Member | GitHub Username | landing-page | backend | frontend | Mobile-app | Report-IoT | Total |
+|---|---|:---:|:---:|:---:|:---:|:---:|:---:|
+| Bonifacio Jaramillo, Samuel Jesus | samuelbonifacio015 | — | 26 | 25 | — | 18 | 69 |
+| Ponce Perales, Alberto Alejandro | aponceperales | 1 | — | — | — | 3 | 4 |
+| Mejia Aliaga, Katherine Maryory | KathMJ | — | — | — | — | 7 | 7 |
+| Delgado Carrasco, Schneider Carlos Alberto | schneiderdc | — | — | 1 | — | 3 | 4 |
+| Lopez Goitia, Carlos Alberto | CarlosAlb101 | — | — | — | — | 2 | 2 |
+| Rodriguez Parco, Joseph Pablo | eJosR-Coding | — | — | — | 6 | — | 6 |
+| Castro Pariona, Jefferson Ernesto | — | — | — | — | — | — | 0 |
+| Sin integrante asociado en el informe | Feli386 | — | — | — | — | 7 | 7 |
+
+Los conteos de `backend` y `landing-page` coinciden con los de la rama `main`. Los de las demás ramas son:
+
+- **`frontend`:** Schneider Delgado tiene 1 commit en la rama `fix/unit-testing` (`4a90d99`, 06/10/2026, «test: fix unit tests and add test coverage»).
+- **`Mobile-app`:** Joseph Rodriguez tiene 6 commits el 22/10/2026 en la rama `feat/mobile-backend-integration`: `cf0c7e7` (alinear rutas del backend e identidad de sesión), `75e63d0` (alinear los flujos de reposición y entrega) y `eba2e45`, `9ec0bee`, `da7ef88` y `3cb144b` (seguimiento de las tareas de alineación móvil MBA-3 y MBA-4). La rama `main` no tiene commits desde el 08/09/2026.
+- **`Report-IoT`:** el conteo incluye `main`, `develop`, `fix/tb1` y las ramas personales.
+
+**Interpretación.**
+
+- **Producto web.** El código de `backend`, `frontend` y de la Fog API de 6.2.2.4 lo concentra Samuel Bonifacio, con 26 commits en `backend` y 25 en `frontend`. Schneider Delgado aporta 1 commit de pruebas unitarias al `frontend`. La landing la modificó Alberto Ponce con 1 commit (`79263fe`, 08/11/2026).
+- **Aplicación móvil.** El trabajo del período está en la rama `feat/mobile-backend-integration` y es de Joseph Rodriguez; aún no está integrado en `main`, por lo que no hay despliegue de la aplicación móvil.
+- **Participación.** Cuatro integrantes tienen commits de producto en el período: Samuel Bonifacio, Alberto Ponce, Schneider Delgado y Joseph Rodriguez. Katherine Mejia y Carlos Lopez solo tienen commits en el informe, y Jefferson Castro no tiene commits en ninguno de los cinco repositorios. Esto no cumple la expectativa de la rúbrica de que todos participen en la implementación; el equipo debe corregirlo en el Sprint 3.
+- **Informe.** `Report-IoT` suma 40 commits distintos de seis usuarios.
+- **Sin asociación.** El usuario `Feli386` tiene 7 commits en `Report-IoT`, pero el informe no lo asocia a ningún integrante; falta confirmar quién es.
+
+**Colaboración en el informe.** El informe se elabora en el repositorio [Report-IoT](https://github.com/16518-IoT-PrimeFuel/Report-IoT) con GitFlow: `main` es la rama estable, `develop` integra el trabajo y cada integrante tiene una rama propia (`alberto`, `jeff`, `jefferson`, `joseph`, `katherine`, `Carlos`, `Schneider`), además de `fix/tb1` para las correcciones del TB1. Entre el 05/10/2026 y el 09/11/2026 el repositorio registra 40 commits distintos en todas sus ramas: Samuel Bonifacio 18, Katherine Mejia 7, `Feli386` 7, Schneider Delgado 3, Alberto Ponce 3 y Carlos Lopez 2. Los commits del 05/10 al 09/10 cierran el TB1; los de `develop` del 09/11/2026 incorporan la evidencia del Sprint 2, este apartado y el registro de versiones. Lo descrito coincide con la fila AV2 del Registro de Versiones del Informe.
+
+A la fecha de la captura, `develop` está adelantada 4 commits respecto de `main`, y la rama `katherine` tiene un *pull request* abierto (#4), por lo que el AV2 aún no se fusionó en `main`. La gráfica *Contributors* de GitHub solo cubre `main`, por lo que no refleja ese trabajo; el conteo por integrante sale del historial de todas las ramas. En `Report-IoT` no hay commits de Jefferson Castro ni de Joseph Rodriguez; la rúbrica pide que todos participen en el informe, y el equipo debe corregirlo en la siguiente entrega.
+
+Las figuras siguientes son las gráficas de *Insights > Contributors* de cada repositorio, con el rango del 05/10/2026 al 09/11/2026. GitHub muestra esa gráfica solo para la rama principal, por lo que la de `Report-IoT` no incluye los commits de las demás ramas.
+
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/insights-backend.jpg" alt="Insights > Contributors del repositorio `backend`: 25 commits de samuelbonifacio015, concentrados en la semana del 11/10/2026." width="800"/>
+  <p><em>Figura 6.67: Insights > Contributors del repositorio `backend`: 25 commits de samuelbonifacio015, concentrados en la semana del 11/10/2026.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/insights-frontend.jpg" alt="Insights > Contributors del repositorio `frontend`: 14 commits de samuelbonifacio015, en la semana del 11/10/2026." width="800"/>
+  <p><em>Figura 6.68: Insights > Contributors del repositorio `frontend`: 14 commits de samuelbonifacio015, en la semana del 11/10/2026.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/insights-mobile.jpg" alt="Insights > Contributors del repositorio `Mobile-app` (rama `main`): sin commits en el período." width="800"/>
+  <p><em>Figura 6.69: Insights > Contributors del repositorio `Mobile-app` (rama `main`): sin commits en el período.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/insights-report.jpg" alt="Insights > Contributors del repositorio `Report-IoT` (rama `main`): los commits se concentran en la semana del 04/10/2026." width="800"/>
+  <p><em>Figura 6.70: Insights > Contributors del repositorio `Report-IoT` (rama `main`): los commits se concentran en la semana del 04/10/2026.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/insights-report-branches.jpg" alt="Ramas del repositorio Report-IoT" width="800"/>
+  <p><em>Figura 6.71: Ramas del repositorio `Report-IoT`: `main`, `develop`, ramas personales y `fix/tb1`.</em></p>
+</div>
+
+Los totales de GitHub no coinciden con los de la tabla porque la gráfica excluye los commits de fusión y se calcula por semanas naturales (de domingo a sábado) con el rango del 04/10/2026 al 08/11/2026 que GitHub aplicó a la consulta; la tabla cuenta todos los commits del historial entre el 05/10/2026 y el 09/11/2026. En `frontend`, la gráfica muestra 14 commits frente a los 25 de la tabla; no se verificó la causa de esa diferencia. La gráfica de `Report-IoT` no incluye los commits de `develop`, `fix/tb1` ni de las ramas personales.
+
 
 #### 6.3. Validation Interviews
 
