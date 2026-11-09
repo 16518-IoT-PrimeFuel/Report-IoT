@@ -91,6 +91,16 @@
       <td>Creación y consolidación de los capítulos V y VI del informe, incluyendo el diseño UI/UX de landing, web y móvil, la evidencia de implementación, pruebas y despliegue del Sprint 1, y la actualización de los capítulos I y II</td>
     </tr>
   </tbody>
+  <tbody>
+    <tr>
+      <td>AV2</td>
+      <td>9/11/26</td>
+      <td>
+        FullTank Team
+      </td>
+      <td>Actualización del informe para el Sprint Review de la semana 12: evidencia del Sprint 2, entrevistas de validación, videos About-the-Product y About-the-Team, corrección de artefactos previos y registro de las nuevas versiones desplegadas de la landing page, las aplicaciones web y las demás aplicaciones del alcance.</td>
+    </tr>
+  </tbody>
 </table>
 
 ## Project Report Collaboration Insights
@@ -366,12 +376,32 @@
         Participó en el Sprint Planning y coordinó con el equipo las decisiones de los web services (ingesta IoT, solicitudes y ciclo de entrega).<br>
         <b>Guerrero Vasquez Jhon Danny</b><br>
         Se incorporó al equipo durante este entregable y se alineó su participación en las reuniones de coordinación.<br>
+        <br>
+        <b>AV2</b><br>
+        <b>Bonifacio Jaramillo Samuel Jesus</b><br>
+        Coordinó el Sprint Review 2 en las reuniones y por Discord, y explicó al equipo el avance del Sprint 2 y las decisiones de despliegue de la nueva landing page, las aplicaciones web y las demás aplicaciones del alcance.<br>
+        <b>Castro Pariona Jefferson Ernesto</b><br>
+        Participó en el Sprint Planning 2 y comunicó los cambios de la nueva versión de la landing page para el Distribuidor Logístico de Combustible.<br>
+        <b>Mejia Aliaga Katherine Maryory</b><br>
+        Participó en el diseño de las entrevistas de validación y comunicó al equipo los hallazgos y las evaluaciones según heurísticas.<br>
+        <b>Ponce Perales Alberto Alejandro</b><br>
+        Preparó y expuso el Sprint Planning 2, y comunicó al equipo el alcance, el backlog y la estructura de las secciones del Sprint 2 y de las entrevistas de validación.<br>
+        <b>Delgado Carrasco Schneider Carlos Alberto</b><br>
+        Participó en las reuniones de revisión y presentó las evidencias de desarrollo, pruebas y ejecución del Sprint 2.<br>
+        <b>Lopez Goitia Carlos Alberto</b><br>
+        Participó en las reuniones de coordinación, exponiendo la documentación de servicios, el despliegue y los guiones de los videos About-the-Product y About-the-Team.<br>
+        <b>Rodriguez Parco Joseph Pablo</b><br>
+        Participó en el Sprint Planning 2 y coordinó con el equipo las decisiones de los web services, su documentación y su nueva versión desplegada.<br>
+        <b>Guerrero Vasquez Jhon Danny</b><br>
+        Participó en las reuniones de coordinación y presentó la validación de la nueva versión del frontend, de la landing page y de las demás aplicaciones del alcance.<br>
       </td>
       <td>
         <b>AV1</b><br>
         La participación en reuniones, entrevistas y sesiones de brainstorming permitió al equipo fortalecer su capacidad para comunicar ideas, hallazgos y propuestas de manera clara, coordinar acuerdos y colaborar en la definición de la solución.<br>
         <b>TB1</b><br>
-        El Sprint Planning y las reuniones de seguimiento sirvieron para acordar alcance, diseño e implementación, y dejar esas decisiones entendidas por todo el equipo.
+        El Sprint Planning y las reuniones de seguimiento sirvieron para acordar alcance, diseño e implementación, y dejar esas decisiones entendidas por todo el equipo.<br>
+        <b>AV2</b><br>
+        El Sprint Planning 2, el Sprint Review y las entrevistas de validación sirvieron para explicar el avance del producto, los despliegues y los hallazgos de usabilidad de forma entendida por todo el equipo.
       </td>
     </tr>
     <tr>
@@ -410,12 +440,32 @@
         Colaboró en la redacción del informe, documentando el trabajo de los web services del Sprint 1.<br>
         <b>Guerrero Vasquez Jhon Danny</b><br>
         Actualizó su perfil de integrante en el capítulo I, contribuyo con el frontend y la validación del landing para que todo funcione correctamente. Además que ayudo en la creación del canvas.<br>
+        <br>
+        <b>AV2</b><br>
+        <b>Bonifacio Jaramillo Samuel Jesus</b><br>
+        Redactó y revisó la evidencia del Sprint 2 en el capítulo VI, incluyendo desarrollo, pruebas, ejecución y despliegue de las nuevas versiones.<br>
+        <b>Castro Pariona Jefferson Ernesto</b><br>
+        Documentó la nueva versión de la landing page y colaboró en la redacción de las secciones de despliegue y de entrevistas de validación.<br>
+        <b>Mejia Aliaga Katherine Maryory</b><br>
+        Redactó el diseño, el registro y la evaluación según heurísticas de las entrevistas de validación, y revisó la coherencia del informe actualizado.<br>
+        <b>Ponce Perales Alberto Alejandro</b><br>
+        Redactó el Sprint Planning 2, el backlog y los apartados de líderes y colaboradores, y actualizó el registro de versiones y las conclusiones del informe.<br>
+        <b>Delgado Carrasco Schneider Carlos Alberto</b><br>
+        Incorporó al capítulo VI las evidencias de desarrollo, pruebas y ejecución del Sprint 2, y revisó la corrección de los artefactos previos.<br>
+        <b>Lopez Goitia Carlos Alberto</b><br>
+        Documentó la evidencia de servicios y de despliegue del Sprint 2, y redactó los scripts de los videos About-the-Product y About-the-Team.<br>
+        <b>Rodriguez Parco Joseph Pablo</b><br>
+        Documentó los web services del Sprint 2, su documentación en Swagger y la evidencia de la nueva versión desplegada.<br>
+        <b>Guerrero Vasquez Jhon Danny</b><br>
+        Documentó la validación de la nueva versión del frontend, de la landing page y de las demás aplicaciones del alcance, y colaboró en la actualización de los Student Outcome.<br>
       </td>
       <td>
         <b>AV1</b><br>
         La elaboración y revisión colaborativa del informe permitió al equipo fortalecer su capacidad para prevenir, estructurar, redactar y presentar información técnica de forma clara, ordenada, coherente y comprensible para diferentes rangos de audiencia.<br>
         <b>TB1</b><br>
-        Los capítulos V y VI, con los ajustes de I y II, dejaron por escrito el diseño, las pruebas y el despliegue para un lector que no vio el código.
+        Los capítulos V y VI, con los ajustes de I y II, dejaron por escrito el diseño, las pruebas y el despliegue para un lector que no vio el código.<br>
+        <b>AV2</b><br>
+        El Sprint 2, las entrevistas de validación y los videos dejaron por escrito el avance del producto, las pruebas, el despliegue y la evaluación con usuarios para un lector que no participó en el sprint.
       </td>
     </tr>
   </tbody>
