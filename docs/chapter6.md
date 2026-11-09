@@ -843,7 +843,59 @@ Las capturas siguen el recorrido de un distribuidor (`distribuidor@prueba.com`) 
   <p><em>Figura 6.36: Conductor registrado, con el aviso de éxito.</em></p>
 </div>
 
-Las capturas del recorrido del comprador están pendientes. No se incluyen capturas de la lectura de un tanque enviada desde el dispositivo, porque el fog no tiene dirección pública.
+El recorrido del comprador (`carlos@prueba.com`, cliente PVC) se capturó el mismo día. Para validar el alta se creó la solicitud #6 de 1 litro de Diésel B5, con la dirección «Av. Universitaria 123 (AV2 test)»; queda en estado *Pending* en la base de producción.
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-comprador-01-dashboard.jpg" alt="Dashboard del comprador (cliente PVC): gasto total, pagos, pedidos por estado y combustible comprado." width="800"/>
+  <p><em>Figura 6.37: Dashboard del comprador (cliente PVC): gasto total, pagos, pedidos por estado y combustible comprado.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-comprador-02-productos-precios.jpg" alt="Productos y precios de los distribuidores." width="800"/>
+  <p><em>Figura 6.38: Productos y precios de los distribuidores.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-comprador-03-mis-tanques.jpg" alt="Mis tanques: nivel registrado, capacidad, espacio libre y umbral del tanque seleccionado." width="800"/>
+  <p><em>Figura 6.39: Mis tanques: nivel registrado, capacidad, espacio libre y umbral del tanque seleccionado.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-comprador-04-solicitudes.jpg" alt="Solicitudes de combustible del comprador, con estado y seguimiento." width="800"/>
+  <p><em>Figura 6.40: Solicitudes de combustible del comprador, con estado y seguimiento.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-comprador-05-pedidos.jpg" alt="Pedidos del comprador con estado Pagado y Pendiente." width="800"/>
+  <p><em>Figura 6.41: Pedidos del comprador con estado Pagado y Pendiente.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-comprador-06-historial-pagos.jpg" alt="Historial de pagos." width="800"/>
+  <p><em>Figura 6.42: Historial de pagos.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-comprador-07-notificaciones.jpg" alt="Notificaciones de solicitud aceptada." width="800"/>
+  <p><em>Figura 6.43: Notificaciones de solicitud aceptada.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-comprador-08-nueva-solicitud-formulario.jpg" alt="Formulario «New Fuel Request» vacío." width="800"/>
+  <p><em>Figura 6.44: Formulario «New Fuel Request» vacío.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-comprador-09-solicitud-llena.jpg" alt="Formulario con tanque, distribuidor, producto, cantidad y dirección de prueba." width="800"/>
+  <p><em>Figura 6.45: Formulario con tanque, distribuidor, producto, cantidad y dirección de prueba.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-comprador-10-solicitud-creada.jpg" alt="Solicitud #6 creada: aparece en estado Pending con el aviso «Request created»." width="800"/>
+  <p><em>Figura 6.46: Solicitud #6 creada: aparece en estado Pending con el aviso «Request created».</em></p>
+</div>
+
+No se incluyen capturas de la lectura de un tanque enviada desde el dispositivo, porque el fog no tiene dirección pública.
 
 #### 6.2.2.7. Services Documentation Evidence for Sprint Review
 
@@ -886,7 +938,49 @@ Los web services siguen documentados con OpenAPI y springdoc, en https://fulltan
 | Políticas de geocerca | 1 |
 | Registro de organizaciones | 1 |
 
-Todas las rutas requieren un JWT en `Authorization: Bearer <token>`, salvo el inicio de sesión, el registro, el restablecimiento de contraseña, el *health check* y la ingesta de lecturas, que usa `X-Device-Token`. La captura de Swagger UI de este sprint está pendiente: la página no terminó de cargar en el navegador porque el documento es extenso.
+Todas las rutas requieren un JWT en `Authorization: Bearer <token>`, salvo el inicio de sesión, el registro, el restablecimiento de contraseña, el *health check* y la ingesta de lecturas, que usa `X-Device-Token`.
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/swagger-01-overview.jpg" alt="Swagger UI de FullTank" width="800"/>
+  <p><em>Figura 6.47: Swagger UI de los web services desplegados, con el botón Authorize.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/swagger-02-health-check.jpg" alt="Prueba de GET /api/health-check en Swagger UI" width="800"/>
+  <p><em>Figura 6.48: Prueba de <code>GET /api/health-check</code> desde Swagger UI: código 200 con <code>status</code> y <code>database</code> en UP.</em></p>
+</div>
+
+Las pruebas siguientes se ejecutaron desde Swagger UI con el JWT del distribuidor, ingresado con *Authorize*. En las capturas, el token de la cabecera `Authorization` se reemplazó por `<JWT redacted>` y no se muestra ninguna credencial. Las operaciones de escritura se aplicaron solo a los registros de prueba creados en la sección 6.2.2.6: el producto *Gasoline 90 (AV2 test)* se actualizó (`PUT`) y luego se eliminó (`DELETE`), por lo que el inventario actual vuelve a tener un solo producto.
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/swagger-03-get-drivers.jpg" alt="Prueba de <code>GET /api/drivers</code>: código 200 con la lista de conductores, incluido el conductor de prueba registrado en la aplicación web." width="800"/>
+  <p><em>Figura 6.49: Prueba de <code>GET /api/drivers</code>: código 200 con la lista de conductores, incluido el conductor de prueba registrado en la aplicación web.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/swagger-04-get-tankers.jpg" alt="Prueba de <code>GET /api/tankers</code>: código 200 con las dos cisternas de la flota." width="800"/>
+  <p><em>Figura 6.50: Prueba de <code>GET /api/tankers</code>: código 200 con las dos cisternas de la flota.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/swagger-05-get-producto-por-id.jpg" alt="Prueba de <code>GET /api/fuel-products/{fuelProductId}</code> con <code>id=2</code>: código 200 con el producto de prueba." width="800"/>
+  <p><em>Figura 6.51: Prueba de <code>GET /api/fuel-products/{fuelProductId}</code> con <code>id=2</code>: código 200 con el producto de prueba.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/swagger-06-put-producto-solicitud.jpg" alt="Solicitud de <code>PUT /api/fuel-products/{fuelProductId}</code>: cuerpo con el precio actualizado a 19.9." width="800"/>
+  <p><em>Figura 6.52: Solicitud de <code>PUT /api/fuel-products/{fuelProductId}</code>: cuerpo con el precio actualizado a 19.9.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/swagger-07-put-producto-respuesta.jpg" alt="Respuesta de <code>PUT /api/fuel-products/{fuelProductId}</code>: código 200 con el producto actualizado." width="800"/>
+  <p><em>Figura 6.53: Respuesta de <code>PUT /api/fuel-products/{fuelProductId}</code>: código 200 con el producto actualizado.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/swagger-08-delete-producto.jpg" alt="Prueba de <code>DELETE /api/fuel-products/{fuelProductId}</code> con <code>id=2</code>: código 204, sin cuerpo." width="800"/>
+  <p><em>Figura 6.54: Prueba de <code>DELETE /api/fuel-products/{fuelProductId}</code> con <code>id=2</code>: código 204, sin cuerpo.</em></p>
+</div>
 
 **Payloads de las operaciones principales.** Los campos marcados con `*` son obligatorios en el esquema.
 
@@ -934,7 +1028,65 @@ En este sprint no cambió la infraestructura descrita en 6.1.4. Se verificó por
 | Fog / ESP32 | — | Solo ejecución local; sin despliegue |
 | Mobile App | — | Sin commits en el período; sin despliegue |
 
-La dirección que figura como *homepage* del repositorio `landing-page` en GitHub redirige a un inicio de sesión de Vercel, por lo que no es una dirección pública; la landing pública es la de la tabla. Las capturas de la landing se incluyen en la figura 6.37.
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/landing-desktop-01.jpg" alt="Inicio con la propuesta de valor, las llamadas a la acción y el panel de ejemplo." width="800"/>
+  <p><em>Figura 6.55: Landing page, escritorio. Inicio con la propuesta de valor, las llamadas a la acción y el panel de ejemplo.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/landing-desktop-02.jpg" alt="Sección «¿Quiénes somos?», con la misión y la visión de la startup." width="800"/>
+  <p><em>Figura 6.56: Landing page, escritorio. Sección «¿Quiénes somos?», con la misión y la visión de la startup.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/landing-desktop-03.jpg" alt="Equipo de PrimeFuel, con los ocho integrantes." width="800"/>
+  <p><em>Figura 6.57: Landing page, escritorio. Equipo de PrimeFuel, con los ocho integrantes.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/landing-desktop-04.jpg" alt="Problema operativo que resuelve la plataforma." width="800"/>
+  <p><em>Figura 6.58: Landing page, escritorio. Problema operativo que resuelve la plataforma.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/landing-desktop-05.jpg" alt="Beneficios para el jefe de operaciones, el planificador de flota y el equipo de despacho." width="800"/>
+  <p><em>Figura 6.59: Landing page, escritorio. Beneficios para el jefe de operaciones, el planificador de flota y el equipo de despacho.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/landing-desktop-06.jpg" alt="Dispositivo de monitoreo del tanque (ESP32 con sensor ultrasónico) y arquitectura." width="800"/>
+  <p><em>Figura 6.60: Landing page, escritorio. Dispositivo de monitoreo del tanque (ESP32 con sensor ultrasónico) y arquitectura.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/landing-desktop-07.jpg" alt="Planes Starter, Pro y Enterprise." width="800"/>
+  <p><em>Figura 6.61: Landing page, escritorio. Planes Starter, Pro y Enterprise.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/landing-desktop-08.jpg" alt="Preguntas frecuentes." width="800"/>
+  <p><em>Figura 6.62: Landing page, escritorio. Preguntas frecuentes.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/landing-desktop-09.jpg" alt="Formulario de contacto." width="800"/>
+  <p><em>Figura 6.63: Landing page, escritorio. Formulario de contacto.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/landing-desktop-10.jpg" alt="Pie de página con enlaces de producto, empresa y legal." width="800"/>
+  <p><em>Figura 6.64: Landing page, escritorio. Pie de página con enlaces de producto, empresa y legal.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/landing-mobile-01.jpg" alt="Versión móvil: inicio." width="300"/>
+  <p><em>Figura 6.65: Landing page. Versión móvil: inicio.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/landing-mobile-02.jpg" alt="Versión móvil: sección «¿Quiénes somos?»." width="300"/>
+  <p><em>Figura 6.66: Landing page. Versión móvil: sección «¿Quiénes somos?».</em></p>
+</div>
 
 #### 6.2.2.9. Team Collaboration Insights during Sprint
 

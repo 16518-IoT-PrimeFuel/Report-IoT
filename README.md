@@ -6,7 +6,7 @@
   <p><strong>Desarrollo de Soluciones IOT</strong></p>
   <p>NRC</p>
   <p><strong>16518</strong></p>
-  <h2>Informe de AV 1</h2>
+  <h2>Informe de AV 2</h2>
   <p>Docente</p>
   <p><strong>Sanchez Portugal, Jimmy Enrique</strong></p>
   <p>Equipo</p>
@@ -57,7 +57,7 @@
 </div>
 <div align="center">
   <p><strong>Período 202620</strong></p>
-  <p><strong>Setiembre 2026</strong></p>
+  <p><strong>Noviembre 2026</strong></p>
 </div>
 
 ## Registro de Versiones del Informe
@@ -319,10 +319,21 @@
       - [6.2.1.7. Services Documentation Evidence for Sprint Review](docs/chapter6.md#6217-services-documentation-evidence-for-sprint-review)
       - [6.2.1.8. Software Deployment Evidence for Sprint Review](docs/chapter6.md#6218-software-deployment-evidence-for-sprint-review)
       - [6.2.1.9. Team Collaboration Insights during Sprint](docs/chapter6.md#6219-team-collaboration-insights-during-sprint)
-  - 6.3. Validation Interviews.
+    - [6.2.2. Sprint 2](docs/chapter6.md#622-sprint-2)
+      - [6.2.2.1. Sprint Planning 2](docs/chapter6.md#6221-sprint-planning-2)
+      - [6.2.2.2. Aspect Leaders and Collaborators](docs/chapter6.md#6222-aspect-leaders-and-collaborators)
+      - [6.2.2.3. Sprint Backlog 2](docs/chapter6.md#6223-sprint-backlog-2)
+      - [6.2.2.4. Development Evidence for Sprint Review](docs/chapter6.md#6224-development-evidence-for-sprint-review)
+      - [6.2.2.5. Testing Suite Evidence for Sprint Review](docs/chapter6.md#6225-testing-suite-evidence-for-sprint-review)
+      - [6.2.2.6. Execution Evidence for Sprint Review](docs/chapter6.md#6226-execution-evidence-for-sprint-review)
+      - [6.2.2.7. Services Documentation Evidence for Sprint Review](docs/chapter6.md#6227-services-documentation-evidence-for-sprint-review)
+      - [6.2.2.8. Software Deployment Evidence for Sprint Review](docs/chapter6.md#6228-software-deployment-evidence-for-sprint-review)
+      - [6.2.2.9. Team Collaboration Insights during Sprint](docs/chapter6.md#6229-team-collaboration-insights-during-sprint)
+  - [6.3. Validation Interviews](docs/chapter6.md#63-validation-interviews)
     - 6.3.1. Diseño de Entrevistas.
     - 6.3.2. Registro de Entrevistas.
-    - 6.3.3. Evaluaciones según heurísticas.  - [6.4. Video About-the-Product](docs/anexes.md#video-about-the-product)
+    - 6.3.3. Evaluaciones según heurísticas.
+  - [6.4. Video About-the-Product](docs/chapter6.md#64-video-about-the-product)
 - [Conclusiones](docs/anexes.md#conclusiones)
   - Conclusiones y recomendaciones.
   - [Video About-the-Team](docs/anexes.md#video-about-the-team)
