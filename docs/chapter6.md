@@ -658,3 +658,292 @@ Los tres commits iniciales de la landing page son del 10/09/2026, anteriores a e
   <img src="../assets/chapter-6/sprint-1/insights-landing.png" alt="Insights del repositorio landing-page" width="800"/>
   <p><em>Figura 6.17: Insights del repositorio de la landing page.</em></p>
 </div>
+
+
+### 6.2.2. Sprint 2
+
+El Sprint 2 cubre el trabajo posterior al cierre de despliegue del Sprint 1, entre el 05/10/2026 y el 08/11/2026. Esta sección se reconstruye a partir del historial de GitHub y de la revisión directa de los productos desplegados. El equipo no registró actas, tablero ni estimaciones del Sprint 2, por lo que esos datos figuran como «no registrado» y no se estiman.
+
+#### 6.2.2.1. Sprint Planning 2
+
+No existe acta del Sprint Planning 2. El resumen se basa en lo que dejó el Sprint 1 y en los commits del período.
+
+| Campo | Valor |
+|---|---|
+| Sprint # | Sprint 2 |
+| Period | 05/10/2026 – 08/11/2026 |
+| Date, Time, Location | No registrado |
+| Attendees | No registrado |
+| Sprint 1 Review Summary | El Sprint 1 cerró el 02/10/2026 con 80 story points de velocity real. Las tareas T03, T14 y T26 no se iniciaron y T32 quedó en curso. |
+| Sprint 1 Retrospective Summary | No registrado |
+| Sprint 2 Goal | *Our focus is on* cerrar los vacíos del flujo web del distribuidor y del comprador, y abrir el camino de telemetría desde el sensor del tanque hasta la API. *We believe it delivers* un abastecimiento más trazable y una lectura de nivel que llega a la plataforma sin intervención manual. *This will be confirmed when* una lectura enviada por el dispositivo aparece en la plataforma y el distribuidor completa el ciclo de un pedido en la aplicación web. |
+| Sprint 2 Velocity | No registrado |
+| Sum of Story Points | No registrado |
+
+#### 6.2.2.2. Aspect Leaders and Collaborators
+
+La asignación sale de los autores de los commits del período, no de una matriz acordada previamente. Los integrantes sin commits de producto en esta ventana no se marcan como líder ni como colaborador.
+
+| Team Member | GitHub Username | Web Services | Web Application | Fog / ESP32 | Landing Page |
+|---|---|:---:|:---:|:---:|:---:|
+| Bonifacio Jaramillo, Samuel Jesus | samuelbonifacio015 | L | L | L | — |
+| Ponce Perales, Alberto Alejandro | — | — | — | — | L |
+
+#### 6.2.2.3. Sprint Backlog 2
+
+No hay tablero del Sprint 2. Las tareas se agrupan por producto según el trabajo que muestran los commits; todas figuran como Done porque están integradas en `main`. No se registraron estimaciones, por lo que la columna de horas queda sin dato.
+
+| Producto | Tarea | Assigned To | Estimation | Status |
+|---|---|---|---|---|
+| Web Services | Invalidar tokens al cambiar credenciales | Bonifacio Jaramillo, Samuel Jesus | — | Done |
+| Web Services | Política de contraseña y límite de intentos | Bonifacio Jaramillo, Samuel Jesus | — | Done |
+| Web Services | Sesión y controles de administrador | Bonifacio Jaramillo, Samuel Jesus | — | Done |
+| Web Services | Identidad de la solicitud en la orden | Bonifacio Jaramillo, Samuel Jesus | — | Done |
+| Web Services | Ciclo de recepción y reposición | Bonifacio Jaramillo, Samuel Jesus | — | Done |
+| Web Services | Unicidad de pago | Bonifacio Jaramillo, Samuel Jesus | — | Done |
+| Web Services | Asignación de entrega reintentable | Bonifacio Jaramillo, Samuel Jesus | — | Done |
+| Web Services | Lecturas de tanque | Bonifacio Jaramillo, Samuel Jesus | — | Done |
+| Web Services | Sedes, RUC y credenciales de dispositivo | Bonifacio Jaramillo, Samuel Jesus | — | Done |
+| Web Services | Gasto del comprador y membresías | Bonifacio Jaramillo, Samuel Jesus | — | Done |
+| Web Services | Health check de la API | Bonifacio Jaramillo, Samuel Jesus | — | Done |
+| Web Application | Diálogos de confirmación, i18n y release | Bonifacio Jaramillo, Samuel Jesus | — | Done |
+| Web Application | Mapas de sedes, política y detalle de tanque | Bonifacio Jaramillo, Samuel Jesus | — | Done |
+| Web Application | Dashboards por rol, clientes y tanques, flota y entregas | Bonifacio Jaramillo, Samuel Jesus | — | Done |
+| Web Application | Inventario, pedidos, notificaciones y sesión | Bonifacio Jaramillo, Samuel Jesus | — | Done |
+| Fog / ESP32 | Fog API local con reenvío de lecturas a la API | Bonifacio Jaramillo, Samuel Jesus | — | Done |
+| Landing Page | Contenido, navbar, formulario de contacto y SEO | Ponce Perales, Alberto Alejandro | — | Done |
+
+#### 6.2.2.4. Development Evidence for Sprint Review
+
+Commits representativos del período, todos en la rama `main`. Las fechas de los commits de la aplicación web y de los web services se indican por rango; el historial completo está en GitHub.
+
+| Repository | Branch | Commit Id | Commit Message | Committed on |
+|---|---|---|---|---|
+| backend | main | 0a364eb | Invalidar tokens al cambiar credenciales | 11/10/2026 – 12/10/2026 |
+| backend | main | bbb76dd | Política de contraseña y límite de intentos | 11/10/2026 – 12/10/2026 |
+| backend | main | 00c27a7 | Ciclo de recepción y reposición | 11/10/2026 – 12/10/2026 |
+| backend | main | e6fcbe5 | Lecturas de tanque | 11/10/2026 – 12/10/2026 |
+| backend | main | 2845c49 | Sedes, RUC y credenciales de dispositivo | 11/10/2026 – 12/10/2026 |
+| backend | main | 11658ec | Health check: `GET /api/health-check` | 08/11/2026 |
+| backend | main | 9142563 | Merge del PR #4 (fog / ESP32) | 08/11/2026 |
+| frontend | main | 910d004 | Mapas de sedes | 12/10/2026 |
+| frontend | main | 27b9a49 | Dashboards por rol | 12/10/2026 |
+| frontend | main | 9a31cec | Inventario | 12/10/2026 |
+| landing-page | main | 79263fe | Contenido, navbar, formulario de contacto y SEO | 08/11/2026 |
+
+En el período, el repositorio `backend` registra 26 commits, todos de Samuel Bonifacio; `frontend`, los commits listados en 6.2.2.3, también de Samuel Bonifacio; y `landing-page`, un commit de Alberto Ponce.
+
+#### 6.2.2.5. Testing Suite Evidence for Sprint Review
+
+Las suites de este sprint existen en el árbol integrado. No hay captura de una corrida de `./mvnw test` de este sprint, por lo que no se cita ninguna cifra de ejecución nueva; las 282 pruebas del informe del Sprint 1 corresponden al 02/10/2026.
+
+| Repository | Suite | Cobertura |
+|---|---|---|
+| backend | `HealthCheckControllerTest` | El endpoint `GET /api/health-check` |
+| backend | `OpenApiSnapshotTest`, `ApiLedgerSelfCheckTest` | Instantáneas del contrato OpenAPI, actualizadas en el sprint |
+| backend (`fog/`) | `ReadingRelayServiceTest`, `ReadingPolicyTest`, `FogApplicationTests` | Reenvío y política de lecturas del fog |
+| landing-page | `ux-landing-check.test.mjs` | Verificación de la landing, se ejecuta con `node ux-landing-check.test.mjs` |
+
+#### 6.2.2.6. Execution Evidence for Sprint Review
+
+Las capturas siguen el recorrido de un distribuidor (`distribuidor@prueba.com`) en la aplicación web desplegada, en inglés. Se tomaron el 09/11/2026 a 1518×784 px. Además de recorrer las vistas, se crearon dos registros de prueba para validar los formularios de alta contra la API desplegada: el producto *Gasoline 90 (AV2 test)* y el conductor *Test Driver AV2*. Ambos quedan en la base de producción.
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-distribuidor-01-dashboard.jpg" alt="Dashboard del distribuidor: ingresos, pedidos por estado, combustible vendido y tanques de clientes." width="800"/>
+  <p><em>Figura 6.18: Dashboard del distribuidor: ingresos, pedidos por estado, combustible vendido y tanques de clientes.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-distribuidor-17-dashboard-mapa.jpg" alt="Dashboard: ubicación de los tanques por sede, con mapa." width="800"/>
+  <p><em>Figura 6.19: Dashboard: ubicación de los tanques por sede, con mapa.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-distribuidor-18-dashboard-cisternas-clientes.jpg" alt="Dashboard: cisternas disponibles y clientes con tanques y pedidos activos." width="800"/>
+  <p><em>Figura 6.20: Dashboard: cisternas disponibles y clientes con tanques y pedidos activos.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-distribuidor-19-dashboard-pedidos-tanques.jpg" alt="Dashboard: últimos pedidos y tarjetas de tanques con su nivel." width="800"/>
+  <p><em>Figura 6.21: Dashboard: últimos pedidos y tarjetas de tanques con su nivel.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-distribuidor-02-clientes.jpg" alt="Clientes y tanques: lista de compradores con estado de nivel, pedidos, tanques y sedes." width="800"/>
+  <p><em>Figura 6.22: Clientes y tanques: lista de compradores con estado de nivel, pedidos, tanques y sedes.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-distribuidor-12-detalle-cliente.jpg" alt="Detalle de un cliente: sedes, tanques con dispositivo y nivel, y pedidos." width="800"/>
+  <p><em>Figura 6.23: Detalle de un cliente: sedes, tanques con dispositivo y nivel, y pedidos.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-distribuidor-03-pagos.jpg" alt="Pagos del distribuidor, con filtros por estado y fechas." width="800"/>
+  <p><em>Figura 6.24: Pagos del distribuidor, con filtros por estado y fechas.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-distribuidor-04-inventario.jpg" alt="Inventario de productos con precio y stock disponible." width="800"/>
+  <p><em>Figura 6.25: Inventario de productos con precio y stock disponible.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-distribuidor-05-solicitudes.jpg" alt="Bandeja de solicitudes entrantes con estado y seguimiento." width="800"/>
+  <p><em>Figura 6.26: Bandeja de solicitudes entrantes con estado y seguimiento.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-distribuidor-06-pedidos.jpg" alt="Lista de pedidos con estado Pagado, Pendiente y Confirmado." width="800"/>
+  <p><em>Figura 6.27: Lista de pedidos con estado Pagado, Pendiente y Confirmado.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-distribuidor-07-entregas.jpg" alt="Entregas del día, con filtros por estado, conductor y cisterna." width="800"/>
+  <p><em>Figura 6.28: Entregas del día, con filtros por estado, conductor y cisterna.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-distribuidor-08-conductores.jpg" alt="Registro de conductores." width="800"/>
+  <p><em>Figura 6.29: Registro de conductores.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-distribuidor-09-flota.jpg" alt="Flota de cisternas con placa, marca, modelo y capacidad." width="800"/>
+  <p><em>Figura 6.30: Flota de cisternas con placa, marca, modelo y capacidad.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-distribuidor-10-notificaciones.jpg" alt="Notificaciones del distribuidor." width="800"/>
+  <p><em>Figura 6.31: Notificaciones del distribuidor.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-distribuidor-11-perfil.jpg" alt="Perfil de la cuenta del distribuidor." width="800"/>
+  <p><em>Figura 6.32: Perfil de la cuenta del distribuidor.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-distribuidor-13-crear-producto-formulario.jpg" alt="Formulario «Create Product» con los datos de prueba." width="800"/>
+  <p><em>Figura 6.33: Formulario «Create Product» con los datos de prueba.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-distribuidor-14-producto-creado.jpg" alt="Inventario después de crear el producto: pasa de 1 a 2 productos." width="800"/>
+  <p><em>Figura 6.34: Inventario después de crear el producto: pasa de 1 a 2 productos.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-distribuidor-15-conductor-formulario.jpg" alt="Formulario «Register Driver» con los datos de prueba." width="800"/>
+  <p><em>Figura 6.35: Formulario «Register Driver» con los datos de prueba.</em></p>
+</div>
+
+<div align="center">
+  <img src="../assets/chapter-6/sprint-2/web-distribuidor-16-conductor-creado.jpg" alt="Conductor registrado, con el aviso de éxito." width="800"/>
+  <p><em>Figura 6.36: Conductor registrado, con el aviso de éxito.</em></p>
+</div>
+
+Las capturas del recorrido del comprador están pendientes. No se incluyen capturas de la lectura de un tanque enviada desde el dispositivo, porque el fog no tiene dirección pública.
+
+#### 6.2.2.7. Services Documentation Evidence for Sprint Review
+
+Los web services siguen documentados con OpenAPI y springdoc, en https://fulltank-backend.onrender.com/swagger-ui/index.html, y el documento OpenAPI está en https://fulltank-backend.onrender.com/api-docs. Al 09/11/2026 el documento declara 127 operaciones sobre 103 rutas, agrupadas en las siguientes etiquetas:
+
+| Etiqueta OpenAPI | Operaciones |
+|---|:---:|
+| Pagos | 9 |
+| Ciclo de entrega | 8 |
+| Cisternas de flota | 8 |
+| Conductores de flota | 8 |
+| Productos de combustible | 8 |
+| Órdenes de combustible | 8 |
+| Solicitudes de abastecimiento | 7 |
+| Tanques del distribuidor | 7 |
+| Autenticación | 5 |
+| Equipos | 5 |
+| Clientes | 4 |
+| Distribuidores | 4 |
+| Empresas compradoras | 4 |
+| Políticas de reposición | 4 |
+| Analítica | 3 |
+| Clientes del distribuidor | 3 |
+| Invitaciones | 3 |
+| Mis notificaciones | 3 |
+| Tanques | 3 |
+| Telemetría | 3 |
+| Administración de plataforma | 2 |
+| Asignación de entregas | 2 |
+| Observaciones de válvula | 2 |
+| Retención de evidencias de transporte | 2 |
+| Seguimiento de transporte | 2 |
+| Usuarios | 2 |
+| Cronología de entregas | 1 |
+| Evidencias de transporte | 1 |
+| Health check | 1 |
+| Miembros de organización | 1 |
+| Mis organizaciones | 1 |
+| Métricas de rutas API | 1 |
+| Políticas de geocerca | 1 |
+| Registro de organizaciones | 1 |
+
+Todas las rutas requieren un JWT en `Authorization: Bearer <token>`, salvo el inicio de sesión, el registro, el restablecimiento de contraseña, el *health check* y la ingesta de lecturas, que usa `X-Device-Token`. La captura de Swagger UI de este sprint está pendiente: la página no terminó de cargar en el navegador porque el documento es extenso.
+
+**Payloads de las operaciones principales.** Los campos marcados con `*` son obligatorios en el esquema.
+
+| Operación | Método y ruta | Cuerpo | Respuestas |
+|---|---|---|---|
+| Iniciar sesión | `POST /api/authentication/sign-in` | `username`, `password`, `rememberMe` | `200`, `400` |
+| Registrar cuenta | `POST /api/authentication/sign-up` | `username`\*, `password`\*, `roles`\*, `buyerCompany`, `providerCompany` | `201`, `400`, `404`, `409`, `500` |
+| Crear producto | `POST /api/fuel-products` | `name`, `fuelType`, `pricePerUnit`, `unit`, `availableStock`, `capacity`, `providerId`, `active` | `201`, `403` |
+| Actualizar stock | `POST /api/fuel-products/{fuelProductId}/update-stock` | `UpdateFuelProductStockResource` | `200`, `404` |
+| Registrar conductor | `POST /api/drivers` | `firstName`\*, `lastName`\*, `licenseNumber`\*, `phoneNumber`\*, `email`\*, `userId`, `status` | `201`, `400`, `403` |
+| Registrar cisterna | `POST /api/tankers` | `licensePlate`\*, `brand`\*, `model`\*, `capacity`, `unit`, `status` | `201`, `400`, `403` |
+| Registrar tanque | `POST /api/provider/tanks` | `buyerCompanyId`\*, `customerAccountId`\*, `siteId`\*, `name`\*, `fuelProductId`\*, `capacity`\*, `unit`\*, `lowLevelPercent`\*, `deviceId`\*, `channel`\*, `initialLevel`, `autoGenerateEnabled` | `201`, `400`, `403`, `404`, `409` |
+| Crear solicitud | `POST /api/replenishment-requests` | `customerAccountId`\*, `providerId`\*, `fuelProductId`\*, `quantity`\*, `deliveryDate`\*, `tankId`, `unit`, `source`, `episodeKey`, `deliveryAddress` | `201`, `400`, `403`, `404` |
+| Asignar entrega | `POST /api/deliveries` | `orderId`, `driverId`, `tankerId`, `windowStart`, `windowEnd`, `scheduledDate`, `notes`, `commandId` | `201`, `400`, `403`, `404`, `409` |
+| Cerrar entrega | `POST /api/deliveries/{deliveryId}/complete` | `deliveredVolume` | `200`, `400`, `404`, `409`, `422` |
+| Registrar pago | `POST /api/payments` | `orderId`, `companyId`, `amount`, `paymentMethod`, `operationNumber` | `201`, `400`, `403`, `404`, `409` |
+| Configurar política de reposición | `PUT /api/tanks/{tankId}/refill-policy` | `lowLevelPercent`, `hysteresisPercent`, `targetLevelPercent`, `providerId`, `fuelProductId`, `autoGenerateEnabled` | `200`, `400`, `403` |
+| Ingestar lectura | `POST /api/telemetry/readings` | `schemaVersion`\*, `deviceId`\*, `channel`\*, `sequence`\*, `capturedAt`\*, `level`\*, `unit` | `202`, `400` |
+
+**Respuestas observadas.** El 09/11/2026 se probó la API desplegada sin credenciales. No se usaron contraseñas en estas pruebas.
+
+| Solicitud | Respuesta |
+|---|---|
+| `GET /api/health-check` | `200`, cuerpo `{"status":"UP","database":"UP"}` |
+| `GET /api/fuel-products`, `/api/tanks`, `/api/replenishment-requests`, `/api/deliveries/1`, `/api/payments` sin token | `401`, sin cuerpo |
+| `POST /api/authentication/sign-in` con usuario inexistente | `400`, `{"code":"VALIDATION_ERROR","message":"Validation failed: credentials","details":"Invalid username or password"}` |
+| `POST /api/telemetry/readings` con cuerpo vacío | `400`, `{"code":"VALIDATION_ERROR","message":"Validation failed: request-body","details":"Field deviceId: must not be blank; Field capturedAt: must not be null; Field sequence: must not be null; Field schemaVersion: must not be null; Field channel: must not be blank; Field level: must not be null"}` |
+
+Los errores de validación usan la forma `{code, message, details}`: `code` es estable, `message` indica el recurso que falló y `details` lista cada campo con su causa. Las rutas protegidas responden `401` sin cuerpo cuando falta el token.
+
+El fog (`fog/` del repositorio `backend`) expone `POST /api/v1/readings` con `X-Fog-Key`, `GET /api/v1/readings/recent` y `GET /health` en el puerto 8090, y reenvía cada lectura a `POST /api/telemetry/readings` con `X-Device-Token`. No tiene dirección pública.
+
+Los commits relacionados con la documentación para este sprint son `11658ec` (anotación OpenAPI del *health check*) y los refrescos de las instantáneas OpenAPI `d055773`, `7cf8d4d` y `a12c378`. Repositorio: https://github.com/16518-IoT-PrimeFuel/backend.
+
+#### 6.2.2.8. Software Deployment Evidence for Sprint Review
+
+En este sprint no cambió la infraestructura descrita en 6.1.4. Se verificó por HTTP el estado de cada producto el 09/11/2026:
+
+| Producto | URL | Verificación |
+|---|---|---|
+| Landing Page | https://landing-page-five-navy-33.vercel.app/ | `200`; el título coincide con la rama `main`. El HTML aún contiene el valor `REEMPLAZAR` en la URL canónica. |
+| Web Application | https://primefuel-frontend-three.vercel.app | `200`; sesión de distribuidor funcional |
+| Web Services | https://fulltank-backend.onrender.com | `GET /api/health-check` responde `200` con `{"status":"UP","database":"UP"}` |
+| Swagger UI | https://fulltank-backend.onrender.com/swagger-ui/index.html | `200` |
+| Fog / ESP32 | — | Solo ejecución local; sin despliegue |
+| Mobile App | — | Sin commits en el período; sin despliegue |
+
+La dirección que figura como *homepage* del repositorio `landing-page` en GitHub redirige a un inicio de sesión de Vercel, por lo que no es una dirección pública; la landing pública es la de la tabla. Las capturas de la landing se incluyen en la figura 6.37.
+
+#### 6.2.2.9. Team Collaboration Insights during Sprint
+
+Entre el 05/10/2026 y el 08/11/2026, según el historial de GitHub, los commits de producto son: Samuel Bonifacio, 26 en `backend` y los del `frontend` listados en 6.2.2.3; Alberto Ponce, 1 en `landing-page`. Los demás integrantes no tienen commits de producto en esta ventana. Los commits de `Report` del 06/10 al 09/10 corresponden al cierre del TB1 y no se atribuyen al Sprint 2 de software. Las capturas de los analíticos de GitHub de este período están pendientes.
+
+#### 6.3. Validation Interviews
+
+Pendiente: no hay diseño, registros ni evaluaciones heurísticas de entrevistas de validación en el repositorio.
+
+#### 6.4. Video About-the-Product
+
+Pendiente: el video no existe aún.
