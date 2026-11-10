@@ -5221,7 +5221,9 @@ Pendiente: no hay diseño, registros ni evaluaciones heurísticas de entrevistas
 
 #### 6.4. Video About-the-Product
 
-Pendiente: el video no existe aún.
+![Video About-the-Product](assets/chapter-6/sprint-2/about-product.png)
+
+Link: [https://youtu.be/AV7touiROWg?si=qnTZ3ZEFO2vxnV-4](https://youtu.be/AV7touiROWg?si=qnTZ3ZEFO2vxnV-4)
 
 ---
 
