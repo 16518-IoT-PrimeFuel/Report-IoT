@@ -5089,7 +5089,7 @@ En este sprint no cambió la infraestructura descrita en 6.1.4. Se verificó por
 | Web Services | https://fulltank-backend.onrender.com | `GET /api/health-check` responde `200` con `{"status":"UP","database":"UP"}` |
 | Swagger UI | https://fulltank-backend.onrender.com/swagger-ui/index.html | `200` |
 | Fog / ESP32 | — | Solo ejecución local; sin despliegue |
-| Mobile App | — | Sin commits en `main` desde el 08/09/2026; hay 6 commits en la rama `feat/mobile-backend-integration` (22/10/2026), sin integrar y sin despliegue |
+| Mobile App | — | Sin despliegue: no hay APK ni publicación en tiendas. Al 09/11/2026 los 6 commits de `feat/mobile-backend-integration` (21/10/2026) estaban sin integrar; el 10 y el 11/11/2026 quedaron en `main` (ver «Evidencia de la aplicación móvil») |
 
 <div align="center">
   <img src="assets/chapter-6/sprint-2/landing-desktop-01.jpg" alt="Inicio con la propuesta de valor, las llamadas a la acción y el panel de ejemplo." width="800"/>
@@ -5151,6 +5151,54 @@ En este sprint no cambió la infraestructura descrita en 6.1.4. Se verificó por
   <p><em>Figura 6.66: Landing page. Versión móvil: sección «¿Quiénes somos?».</em></p>
 </div>
 
+#### Evidencia de la aplicación móvil
+
+Esta evidencia es posterior al cierre del Sprint 2 (08/11/2026) y a la verificación del 09/11/2026. La aplicación móvil sigue sin despliegue. Lo que cambió es el estado del repositorio `Mobile-app`: su rama `main` ya integra la alineación con el backend y la corrección de los flujos que antes funcionaban solo con datos locales. Repositorio: https://github.com/16518-IoT-PrimeFuel/Mobile-app.
+
+| Fecha | Commit | Cambio integrado en `main` |
+|---|---|---|
+| 10/11/2026 | `c780b29` | Tema corporativo y tipografía |
+| 10/11/2026 | `199d87e` | Flujos autenticados alineados con la API |
+| 11/11/2026 | `37076c3` | Registro de cuenta con la API |
+| 11/11/2026 | `f8f08f6` | Recuperación de contraseña y pantalla de restablecimiento con token |
+| 11/11/2026 | `7635381` | Inicio y permisos de ruta según el rol de la sesión |
+| 11/11/2026 | `1522257` | Pestañas de navegación según el rol |
+| 11/11/2026 | `29b5df1` | Reposición mediante la API de solicitudes de reposición |
+| 11/11/2026 | `a7407c2` | Perfil de empresa y acciones de seguridad con la API |
+| 11/11/2026 | `a28fde5` | Se retiran las acciones que el backend no respalda |
+| 11/11/2026 | `b8d7d76` | Pantalla de inicio con datos del backend |
+| 11/11/2026 | `7ab3aa0` | Lista de clientes del proveedor desde la API |
+
+Los merges a `main` son `3b84003`, `ccf76f1` y `ad80584` (11/11/2026). Los seis commits del 21/10/2026 de `feat/mobile-backend-integration` ya forman parte de `main`.
+
+| Verificación | Resultado (11/11/2026) |
+|---|---|
+| `flutter test` | 144 pruebas, 0 fallos |
+| `flutter analyze` | 17 avisos que ya existían antes de estos cambios; no se añadió ninguno |
+| Enlace profundo `fulltank:///reset-password` | Configurado en Android e iOS; sin probar, porque requiere un dispositivo |
+
+Las figuras 6.67 a 6.70 son wireframes derivados del código de `Mobile-app` en `main`; no son capturas de la aplicación en ejecución. Los datos que aparecen son de ejemplo.
+
+<div align="center">
+  <img src="assets/chapter-6/sprint-2/mobile-mapa-navegacion.jpg" alt="Mapa de navegación de la aplicación móvil." width="800"/>
+  <p><em>Figura 6.67: Aplicación móvil. Mapa de navegación entre pantallas, desde el acceso hasta las secciones de comprador y proveedor.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/chapter-6/sprint-2/mobile-wireframes-acceso.jpg" alt="Wireframes de inicio de sesión, registro y recuperación de contraseña." width="800"/>
+  <p><em>Figura 6.68: Aplicación móvil. Wireframes del acceso: inicio de sesión, registro de cuenta y recuperación de contraseña.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/chapter-6/sprint-2/mobile-wireframes-comprador.jpg" alt="Wireframes del inicio del comprador, nuevo pedido y reposición." width="800"/>
+  <p><em>Figura 6.69: Aplicación móvil. Wireframes del comprador: inicio, nuevo pedido y solicitud de reposición.</em></p>
+</div>
+
+<div align="center">
+  <img src="assets/chapter-6/sprint-2/mobile-wireframes-proveedor.jpg" alt="Wireframes de pedidos por atender, asignación de entrega y clientes." width="800"/>
+  <p><em>Figura 6.70: Aplicación móvil. Wireframes del proveedor: pedidos por atender, asignación de entrega y clientes.</em></p>
+</div>
+
 #### 6.2.2.9. Team Collaboration Insights during Sprint
 
 La tabla resume los commits de cada integrante entre el 05/10/2026 y el 09/11/2026, según el historial de GitHub de la organización [16518-IoT-PrimeFuel](https://github.com/16518-IoT-PrimeFuel). Se cuentan **todas las ramas** de cada repositorio, sin repetir un mismo commit en dos ramas y contando los commits de fusión. La asignación de usuarios de GitHub a integrantes sigue la tabla de 6.2.2.2 y 6.2.1.2.
@@ -5189,27 +5237,27 @@ Las figuras siguientes son las gráficas de *Insights > Contributors* de cada re
 
 <div align="center">
   <img src="assets/chapter-6/sprint-2/insights-backend.jpg" alt="Insights > Contributors del repositorio `backend`: 25 commits de samuelbonifacio015, concentrados en la semana del 11/10/2026." width="800"/>
-  <p><em>Figura 6.67: Insights > Contributors del repositorio `backend`: 25 commits de samuelbonifacio015, concentrados en la semana del 11/10/2026.</em></p>
+  <p><em>Figura 6.71: Insights > Contributors del repositorio `backend`: 25 commits de samuelbonifacio015, concentrados en la semana del 11/10/2026.</em></p>
 </div>
 
 <div align="center">
   <img src="assets/chapter-6/sprint-2/insights-frontend.jpg" alt="Insights > Contributors del repositorio `frontend`: 14 commits de samuelbonifacio015, en la semana del 11/10/2026." width="800"/>
-  <p><em>Figura 6.68: Insights > Contributors del repositorio `frontend`: 14 commits de samuelbonifacio015, en la semana del 11/10/2026.</em></p>
+  <p><em>Figura 6.72: Insights > Contributors del repositorio `frontend`: 14 commits de samuelbonifacio015, en la semana del 11/10/2026.</em></p>
 </div>
 
 <div align="center">
   <img src="assets/chapter-6/sprint-2/insights-mobile.jpg" alt="Insights > Contributors del repositorio `Mobile-app` (rama `main`): sin commits en el período." width="800"/>
-  <p><em>Figura 6.69: Insights > Contributors del repositorio `Mobile-app` (rama `main`): sin commits en el período.</em></p>
+  <p><em>Figura 6.73: Insights > Contributors del repositorio `Mobile-app` (rama `main`): sin commits en el período.</em></p>
 </div>
 
 <div align="center">
   <img src="assets/chapter-6/sprint-2/insights-report.jpg" alt="Insights > Contributors del repositorio `Report-IoT` (rama `main`): los commits se concentran en la semana del 04/10/2026." width="800"/>
-  <p><em>Figura 6.70: Insights > Contributors del repositorio `Report-IoT` (rama `main`): los commits se concentran en la semana del 04/10/2026.</em></p>
+  <p><em>Figura 6.74: Insights > Contributors del repositorio `Report-IoT` (rama `main`): los commits se concentran en la semana del 04/10/2026.</em></p>
 </div>
 
 <div align="center">
   <img src="assets/chapter-6/sprint-2/insights-report-branches.jpg" alt="Ramas del repositorio Report-IoT" width="800"/>
-  <p><em>Figura 6.71: Ramas del repositorio `Report-IoT`: `main`, `develop`, ramas personales y `fix/tb1`.</em></p>
+  <p><em>Figura 6.75: Ramas del repositorio `Report-IoT`: `main`, `develop`, ramas personales y `fix/tb1`.</em></p>
 </div>
 
 Los totales de GitHub no coinciden con los de la tabla porque la gráfica excluye los commits de fusión y se calcula por semanas naturales (de domingo a sábado) con el rango del 04/10/2026 al 08/11/2026 que GitHub aplicó a la consulta; la tabla cuenta todos los commits del historial entre el 05/10/2026 y el 09/11/2026. En `frontend`, la gráfica muestra 14 commits frente a los 25 de la tabla; no se verificó la causa de esa diferencia. La gráfica de `Report-IoT` no incluye los commits de `develop`, `fix/tb1` ni de las ramas personales.
