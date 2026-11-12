@@ -297,7 +297,7 @@
   - [5.3. Landing Page UI Design](docs/chapter5.md#53-landing-page-ui-design)
     - [5.3.1. Landing Page Wireframe](docs/chapter5.md#531-landing-page-wireframe)
     - [5.3.2. Landing Page Mock-up](docs/chapter5.md#532-landing-page-mock-up)
-  - [5.4. Applications UX/UI Design](docs/chapter5.md#54-applications-uxui-design)
+  - [5.4. Applications UX/UI Design](docs/chapter5.md#54-applications-uxui-design)w
     - [5.4.1. Applications Wireframes](docs/chapter5.md#541-applications-wireframes)
     - [5.4.2. Applications Wireflow Diagrams](docs/chapter5.md#542-applications-wireflow-diagrams)
     - [5.4.3. Applications Mock-ups](docs/chapter5.md#543-applications-mock-ups)
